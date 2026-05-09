@@ -1,0 +1,48 @@
+{
+  "name": "@mysoftwareadmin/sdk",
+  "version": "0.3.0",
+  "description": "MySoftwareAdmin SDK with a Base44-compatible API surface for app migrations.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./base44-compat": {
+      "types": "./dist/base44Compat/index.d.ts",
+      "import": "./dist/base44Compat/index.js"
+    },
+    "./base44Compat": {
+      "types": "./dist/base44Compat/index.d.ts",
+      "import": "./dist/base44Compat/index.js"
+    },
+    "./auth-utils": {
+      "types": "./dist/authUtils.d.ts",
+      "import": "./dist/authUtils.js"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "sdk",
+    "saas",
+    "multi-tenant",
+    "mysoftwareadmin",
+    "base44-compatible"
+  ],
+  "author": "mySoftwareAdmin",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

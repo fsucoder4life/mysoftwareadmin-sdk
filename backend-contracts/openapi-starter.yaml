@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: MySoftwareAdmin Platform API
+  version: 0.2.0
+paths:
+  /auth/login:
+    post:
+      summary: Login with email and password
+      responses:
+        '200': { description: AuthResult }
+  /auth/me:
+    get:
+      summary: Get current user
+      responses:
+        '200': { description: CurrentUser }
+  /entities/{entityName}:
+    get:
+      summary: List dynamic entity records
+      parameters:
+        - name: entityName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: PagedResult }
+    post:
+      summary: Create dynamic entity record
+      parameters:
+        - name: entityName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: EntityRecord }
+  /functions/{name}/invoke:
+    post:
+      summary: Invoke backend function
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: FunctionInvokeResult }
