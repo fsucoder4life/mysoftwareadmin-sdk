@@ -5,7 +5,7 @@ Shared TypeScript SDK for MySoftwareAdmin apps and a Base44-compatible migration
 ## Install locally while testing
 
 ```bash
-npm install ../mysoftwareadmin-sdk-v0.3-base44-compatible
+npm install ../mysoftwareadmin-sdk
 ```
 
 ## Native MySoftwareAdmin SDK
